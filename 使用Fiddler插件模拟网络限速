@@ -1,0 +1,7 @@
+1、安装FiddlerScript插件：http://fiddler2.com/add-ons
+
+下载安装后，Fiddler会出现一个FiddlerScript的选项：
+在这个脚本里面，有个OnBeforeRequest方法
+这一行代码是新加的，oSession["response-trickle-delay"] = "3000"的意思是服务端返回的数据延迟3秒返回给客户端，
+如果把response改为request，就是客户端的请求延迟3秒发送给服务器；
+这个的原理我大致的了解了一下，就是Fiddler作为一个代理服务器，它在客户端和服务端中间起到了一个暂存的作用，比如request请求，它先拦截下来，等delay时间到了之后再转发出去；
